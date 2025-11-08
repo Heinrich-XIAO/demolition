@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://barsmnu7jtg1d"
-path="res://.godot/imported/Wood051_2K-JPG_NormalGL.jpg-de58a2d96b271a958547940981d9bcd8.ctex"
+uid="uid://ckuxc2lutvix0"
+path="res://.godot/imported/Wood051_2K-JPG_NormalDX.jpg-6afbdc44edd16c72f30d3cc21adbfee7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wood051_2K-JPG_NormalGL.jpg"
-dest_files=["res://.godot/imported/Wood051_2K-JPG_NormalGL.jpg-de58a2d96b271a958547940981d9bcd8.ctex"]
+source_file="res://images/Wood051_2K-JPG_NormalDX.jpg"
+dest_files=["res://.godot/imported/Wood051_2K-JPG_NormalDX.jpg-6afbdc44edd16c72f30d3cc21adbfee7.ctex"]
 
 [params]
 

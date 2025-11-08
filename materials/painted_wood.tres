@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bvcn56wcdqepp"]
+
+[ext_resource type="Texture2D" uid="uid://cluh1lgodligh" path="res://images/Wood051_2K-JPG_Displacement.jpg" id="1_hxyrq"]
+[ext_resource type="Texture2D" uid="uid://egg5bx33so2i" path="res://images/Wood051_2K-JPG_Roughness.jpg" id="2_nlidk"]
+
+[resource]
+albedo_color = Color(1, 0.21960784, 0, 1)
+metallic = 0.5
+metallic_specular = 0.4
+metallic_texture = ExtResource("1_hxyrq")
+roughness_texture = ExtResource("2_nlidk")
+heightmap_enabled = true
+heightmap_scale = 16.0
+heightmap_texture = ExtResource("1_hxyrq")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+grow = true
+stencil_flags = 2
