@@ -49,6 +49,8 @@ func create_block_to_shoot(size: float) -> RigidBody3D:
 	blocks.push_front(the_new_block)
 	return the_new_block
 
+func shoot_block(direction: Vector3):
+	blocks[0].apply_central_impulse(direction)
 
 func _ready() -> void:
 	add_child(new_block(Vector3(10, 0, 0), false, 10.0, Vector3.ZERO))
@@ -56,7 +58,6 @@ func _ready() -> void:
 	
 	move_camera_to_shoot()
 	create_block_to_shoot(2.0)
-	blocks[0].apply_central_impulse(Vector3(30, 0, 0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

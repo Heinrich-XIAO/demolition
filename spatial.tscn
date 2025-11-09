@@ -1,8 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://ljkaaogl1qh1"]
+[gd_scene load_steps=13 format=3 uid="uid://ljkaaogl1qh1"]
 
 [ext_resource type="Script" uid="uid://djkikjpygn2qk" path="res://spatial.gd" id="1_3m5f8"]
 [ext_resource type="Script" uid="uid://y78wblngrfn0" path="res://camera_3d.gd" id="2_m7tst"]
 [ext_resource type="Material" uid="uid://38jlsx7v8gc1" path="res://materials/wood.tres" id="2_ne8tm"]
+[ext_resource type="Shader" uid="uid://g5shp0bna7vu" path="res://crosshair.gdshader" id="4_c07jr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ab87h"]
+shader = ExtResource("4_c07jr")
+shader_parameter/is_symmetric = true
+shader_parameter/center_offset = Vector2(0, 0)
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_outline_color = Color(0, 0, 0, 1)
+shader_parameter/line_length = Vector2(20, 20)
+shader_parameter/line_thickness = Vector2(1, 1)
+shader_parameter/line_offset = Vector2(10, 10)
+shader_parameter/line_outline_thickness = Vector2(1, 1)
+shader_parameter/dot_color = Color(1, 1, 1, 1)
+shader_parameter/dot_outline_color = Color(0, 0, 0, 1)
+shader_parameter/dot_size = 2.0
+shader_parameter/dot_outline_thickness = 1.0
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_h2366"]
+size = Vector2(128, 128)
+
+[sub_resource type="GDScript" id="GDScript_hjq85"]
+script/source = "extends TextureRect
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3m5f8"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -25,6 +58,25 @@ size = Vector3(100, 1, 100)
 
 [node name="Spatial" type="Node3D"]
 script = ExtResource("1_3m5f8")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_ab87h")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_h2366")
+stretch_mode = 2
+script = SubResource("GDScript_hjq85")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_m7tst")
